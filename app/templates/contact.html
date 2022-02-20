@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<form  action="" method="POST">
+    {{form.csrf_token}}
+    <div class = "data">
+        {{form.name.label}}
+        {{form.name()}}
+    </div>
+    <div class = "data">
+        {{form.email.label}}
+        {{form.email()}}
+    </div>
+    <div class = "data">
+        {{form.subject.label}}
+        {{form.subject()}}
+    </div>
+    <div class = "data">
+        {{form.message.label}}
+        {{form.message()}}
+    </div>
+    {{form.submit()}}
+
+    {% if form.errors %}
+    {{ form.errors }}
+    {% endif %}
+
+</form>
+{% endblock %}
